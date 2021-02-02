@@ -18,3 +18,12 @@ Data type:
  Bytearray: changable 
  Memoryview: it is useful for looking into the data of object (for eg bytearray)
  it can also help to change the values of the object
+
+Fetching data type:
+  we can get to know the type of data by - =type(object)
+  
+Chnaging data type: 
+  two types of conversions:
+    1. implicit: done by python automatically , python coverts the result data type to higher one from the involved objects
+    2. Explicit: done by user, can be done by useing syntax:<req_datatype>(expression)
+        
