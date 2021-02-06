@@ -5,3 +5,4 @@ z = slice(-1,-4,-1)
 print(x[z])
 m = slice(2,4,1)
 print(x[m])
+
