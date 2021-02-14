@@ -1,0 +1,22 @@
+Python Objects and Classes:
+
+- Defining a Class in Python:
+Like function definitions begin with the def keyword in Python, class definitions begin with a class keyword.
+
+Here is a simple class definition.
+
+class MyNewClass:
+    '''This is a docstring. I have created a new class'''
+    pass
+    
+There are also special attributes in it that begins with double underscores __. 
+
+Creating an Object in Python:
+we can use class function to make object, for eg: object = class()
+
+Constructors in Python:
+Class functions that begin with double underscore __ are called special functions as they have special meaning.
+Of one particular interest is the __init__() function. This special function gets called whenever a new object of that class is instantiated.
+
+Deleting Attributes and Objects:
+Any attribute of an object can be deleted anytime, using the del statement. 
