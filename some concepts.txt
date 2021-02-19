@@ -1,0 +1,70 @@
+
+
+CPU Bound: means the rate at which process progresses is limited by the speed of the CPU. A task that performs calculations on a small set of numbers, for example multiplying small matrices, is likely to be CPU bound.
+
+I/O Bound: means the rate at which a process progresses is limited by the speed of the I/O subsystem. A task that processes data from disk, for example, counting the number of lines in a file is likely to be I/O bound.
+
+Memory bound:  means the rate at which a process progresses is limited by the amount memory available and the speed of that memory access. A task that processes large amounts of in memory data, for example multiplying large matrices, is likely to be Memory Bound.
+
+HTTP: Hypertext transfer protocol is used for communication from application to TCP. it actually gives signal on what kind of request you are making and what kind of data you need from the internet or data servers.
+
+TCP: Transmission control protocol takes the data or req from HTTP through ports and divides it into small packets which are then send theough network protocol to destination system where it again assembles the packets and feeds it into the HTTP
+
+Socket Programming:
+Socket programming is a way of connecting two nodes on a network to communicate with each other. One socket(node) listens on a particular port at an IP, while other socket reaches out to the other to form a connection. Server forms the listener socket while client reaches out to the server.
+
+Socket programming is started by importing the socket library and making a simple socket.
+
+import socket
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+Here we made a socket instance and passed it two parameters. The first parameter is AF_INET and the second one is SOCK_STREAM. AF_INET refers to the address family ipv4. The SOCK_STREAM means connection oriented TCP protocol.
+
+Connecting to a server:
+You can also find the ip using python:
+
+import socket 
+
+ip = socket.gethostbyname('www.google.com')
+print ip
+A server has a bind() method which binds it to a specific ip and port so that it can listen to incoming requests on that ip and port.A server has a listen() method which puts the server into listen mode. This allows the server to listen to incoming connections. And last a server has an accept() and close() method. The accept method initiates a connection with the client and the close method closes the connection with the client.
+
+
+Multithreading:
+a thread is a sequence of such instructions within a program that can be executed independently of other code.
+A thread contains all this information in a Thread Control Block (TCB):
+
+Thread Identifier: Unique id (TID) is assigned to every new thread
+Stack pointer: Points to thread’s stack in the process. Stack contains the local variables under thread’s scope.
+Program counter: a register which stores the address of the instruction currently being executed by thread.
+Thread state: can be running, ready, waiting, start or done.
+Thread’s register set: registers assigned to thread for computations.
+Parent process Pointer: A pointer to the Process control block (PCB) of the process that the thread lives on.
+
+To import the threading module, we do:
+import threading
+To create a new thread, we create an object of Thread class. It takes following arguments:
+target: the function to be executed by thread
+args: the arguments to be passed to the target function
+In above example, we created 2 threads with different target functions:
+
+t1 = threading.Thread(target=print_square, args=(10,))
+t2 = threading.Thread(target=print_cube, args=(10,))
+
+To start a thread, we use start method of Thread class.
+t1.start()
+t2.start()
+
+Once the threads start, the current program (you can think of it like a main thread) also keeps on executing. In order to stop execution of current program until a thread is complete, we use join method.
+t1.join()
+t2.join()
+
+We use os.getpid() function to get ID of current process.
+print("ID of process running main program: {}".format(os.getpid()))
+
+We use threading.main_thread() function to get the main thread object. In normal conditions, the main thread is the thread from which the Python interpreter was started. name attribute of thread object is used to get the name of thread.
+print("Main thread name: {}".format(threading.main_thread().name))
+
+We use the threading.current_thread() function to get the current thread object.
+print("Task 1 assigned to thread: {}".format(threading.current_thread().name))
+
