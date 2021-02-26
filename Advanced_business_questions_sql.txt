@@ -1,0 +1,30 @@
+postgres=# SELECT source, destination, COUNT(*),                             ion)
+postgres-#      CASE WHEN source<destination THEN concat (source,'-',destination)
+postgres-#      ELSE concat (destination,'-',source)
+postgres-# END route
+postgres-# FROM flightbookings
+postgres-# GROUP BY source, destination, route
+postgres-# ORDER BY count DESC;
+ source | destination | count |  route
+--------+-------------+-------+---------
+ BOM    | GOI         |     3 | BOM-GOI
+ CCU    | PAT         |     3 | CCU-PAT
+ DEL    | BLR         |     2 | BLR-DEL
+ BBI    | PAT         |     2 | BBI-PAT
+ GOI    | BOM         |     2 | BOM-GOI
+ PAT    | DEL         |     2 | DEL-PAT
+ PAT    | CCU         |     2 | CCU-PAT
+ GOI    | DEL         |     1 | DEL-GOI
+ GOI    | PAT         |     1 | GOI-PAT
+ BOM    | CCU         |     1 | BOM-CCU
+ DEL    | GOI         |     1 | DEL-GOI
+ DEL    | BOM         |     1 | BOM-DEL
+ BLR    | PAT         |     1 | BLR-PAT
+ BOM    | BLR         |     1 | BLR-BOM
+ BOM    | DEL         |     1 | BOM-DEL
+ BLR    | DEL         |     1 | BLR-DEL
+ DEL    | CCU         |     1 | CCU-DEL
+ CCU    | BBI         |     1 | BBI-CCU
+ CCU    | DEL         |     1 | CCU-DEL
+ DEL    | PAT         |     1 | DEL-PAT
+(20 rows)
