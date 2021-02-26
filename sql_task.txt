@@ -1,0 +1,67 @@
+1. Patients:
+postgres=# CREATE TABLE patients (
+postgres(# patient_id VARCHAR(60),
+postgres(# procedure VARCHAR(60),
+postgres(# doctor_id VARCHAR(60),
+postgres(# admit_date DATE,
+postgres(# release_date DATE,
+postgres(# bill_id FLOAT(2) );
+CREATE TABLE
+postgres=# \d patients;
+                        Table "public.patients"
+    Column    |         Type          | Collation | Nullable | Default
+--------------+-----------------------+-----------+----------+---------
+ patient_id   | character varying(60) |           |          |
+ procedure    | character varying(60) |           |          |
+ doctor_id    | character varying(60) |           |          |
+ admit_date   | date                  |           |          |
+ release_date | date                  |           |          |
+ bill_id      | real                  |           |          |
+
+
+postgres=# select * from patients;
+ patient_id | procedure | doctor_id | admit_date | release_date | bill_id
+------------+-----------+-----------+------------+--------------+---------
+(0 rows)
+
+
+2. Doctor:
+postgres=#
+postgres=# CREATE TABLE doctor (
+postgres(# doctor_id VARCHAR(50) PRIMARY KEY NOT NULL,
+postgres(# department VARCHAR(150) NOT NULL);
+CREATE TABLE
+postgres=# \d doctor;
+                        Table "public.doctor"
+   Column   |          Type          | Collation | Nullable | Default
+------------+------------------------+-----------+----------+---------
+ doctor_id  | character varying(50)  |           | not null |
+ department | character varying(150) |           | not null |
+Indexes:
+    "doctor_pkey" PRIMARY KEY, btree (doctor_id)
+
+    
+
+3. Bills:
+postgres=# CREATE TABLE bills (
+postgres(# bill_id VARCHAR(50) PRIMARY KEY NOT NULL,
+postgres(# bill_date DATE NOT NULL,
+postgres(# amount FLOAT(2) NOT NULL,
+postgres(# paid BOOLEAN);
+CREATE TABLE
+postgres=# \d bills
+                        Table "public.bills"
+  Column   |         Type          | Collation | Nullable | Default
+-----------+-----------------------+-----------+----------+---------
+ bill_id   | character varying(50) |           | not null |
+ bill_date | date                  |           | not null |
+ amount    | real                  |           | not null |
+ paid      | boolean               |           |          |
+Indexes:
+    "bills_pkey" PRIMARY KEY, btree (bill_id)
+
+
+postgres=# select * from bills;
+ bill_id | bill_date | amount | paid
+---------+-----------+--------+------
+(0 rows)
