@@ -1,0 +1,159 @@
+FOR copying data from csv to tables:
+
+postgres=# COPY patients
+postgres-# FROM 'C:/Users/Public/Documents/Felix SQL - Patients.csv'
+postgres-# DELIMITER ','
+postgres-# CSV HEADER;
+COPY 27
+postgres=# select * from patients;
+ patient_id | procedure | doctor_id | admit_date | release_date | bill_id
+------------+-----------+-----------+------------+--------------+---------
+ p1         | heart     | d1        | 2019-03-01 | 2019-03-05   | b1
+ p2         | accident  | d2        | 2019-03-01 | 2019-03-04   | b2
+ p3         | heart     | d1        | 2019-03-02 | 2019-03-06   | b3
+ p4         | fracture  | d2        | 2019-03-04 | 2019-03-07   | b4
+ p5         | liver     | d3        | 2019-03-04 | 2019-03-07   | b5
+ p6         | fracture  | d2        | 2019-03-06 | 2019-03-08   | b6
+ p7         | accident  | d2        | 2019-03-08 | 2019-03-12   | b7
+ p8         | heart     | d1        | 2019-03-10 | 2019-03-13   | b8
+ p9         | lung      | d4        | 2019-03-11 | 2019-03-15   | b9
+ p10        | heart     | d1        | 2019-03-13 | 2019-03-17   | b10
+ p11        | liver     | d3        | 2019-03-15 | 2019-03-18   | b11
+ p12        | accident  | d2        | 2019-03-16 | 2019-03-20   | b12
+ p13        | fracture  | d2        | 2019-03-18 | 2019-03-22   | b13
+ p14        | heart     | d1        | 2019-03-21 | 2019-03-25   | b14
+ p15        | lung      | d4        | 2019-03-22 | 2019-03-28   | b15
+ p16        | heart     | d1        | 2019-04-01 | 2019-04-04   | b16
+ p17        | fracture  | d2        | 2019-04-02 | 2019-04-05   | b17
+ p18        | heart     | d1        | 2019-04-03 | 2019-04-06   | b18
+ p19        | accident  | d2        | 2019-04-04 | 2019-04-10   | b19
+ p20        | lung      | d4        | 2019-04-05 | 2019-04-11   | b20
+ p21        | liver     | d3        | 2019-04-06 | 2019-04-11   | b21
+ p22        | heart     | d1        | 2019-04-10 | 2019-04-14   | b22
+ p23        | liver     | d3        | 2019-04-11 | 2019-04-15   | b23
+ p24        | accident  | d2        | 2019-04-12 | 2019-04-15   | b24
+ p25        | liver     | d3        | 2019-04-13 | 2019-04-17   | b25
+ p26        | heart     | d1        | 2019-04-14 | 2019-04-19   | b26
+ p27        | liver     | d3        | 2019-04-25 | 2019-04-30   | b27
+(27 rows)
+
+
+
+postgres=# COPY doctor
+postgres-# FROM 'C:/Users/Public/Documents/Felix SQL - Doctor.csv'
+postgres-# DELIMITER ','
+postgres-# CSV HEADER;
+COPY 4
+postgres=# select * from doctor;
+ doctor_id | department
+-----------+------------
+ d1        | Heart
+ d2        | Ortho
+ d3        | Endo
+ d4        | Pneumonia
+(4 rows)
+
+
+
+postgres=# COPY bills
+postgres-# FROM 'C:/Users/Public/Documents/Felix SQL - Bills.csv'
+postgres-# DELIMITER ','
+postgres-# CSV HEADER;
+COPY 27
+postgres=# select * from bills;
+ bill_id | bill_date  | amount | paid
+---------+------------+--------+------
+ b1      | 2019-03-05 | 104238 | t
+ b2      | 2019-03-04 | 112632 | t
+ b3      | 2019-03-06 | 161496 | t
+ b4      | 2019-03-07 |  57539 | t
+ b5      | 2019-03-07 | 159787 | t
+ b6      | 2019-03-08 |  40635 | t
+ b7      | 2019-03-12 | 143923 | t
+ b8      | 2019-03-13 | 177501 | t
+ b9      | 2019-03-15 |  78625 | t
+ b10     | 2019-03-17 | 115190 | t
+ b11     | 2019-03-18 |  85369 | f
+ b12     | 2019-03-20 | 120970 | t
+ b13     | 2019-03-22 | 116608 | t
+ b14     | 2019-03-25 | 151407 | t
+ b15     | 2019-03-28 | 108224 | f
+ b16     | 2019-04-04 | 152525 | t
+ b17     | 2019-04-05 | 129935 | t
+ b18     | 2019-04-06 |  43422 | t
+ b19     | 2019-04-10 | 127151 | t
+ b20     | 2019-04-11 | 144057 | f
+ b21     | 2019-04-11 | 179716 | t
+ b22     | 2019-04-14 |  93821 | t
+ b23     | 2019-04-15 |  50077 | t
+ b24     | 2019-04-15 | 146789 | t
+ b25     | 2019-04-17 |  68022 | t
+ b26     | 2019-04-19 |  54575 | t
+ b27     | 2019-04-30 | 162245 | t
+(27 rows)
+
+
+1. How many patients visited the hospital in March and April respectively?
+
+postgres=# ;
+postgres=# SELECT COUNT(admit_date) from patient
+postgres-# WHERE admit_date >= '2019-03-01'::DATE
+postgres-# AND admit_date <= '2019-04-30'::DATE;
+ERROR:  relation "patient" does not exist
+LINE 1: SELECT COUNT(admit_date) from patient
+                                      ^
+postgres=# SELECT COUNT(admit_date) from patients
+postgres-# WHERE admit_date >= '2019-03-01'::DATE
+postgres-# AND admit_date <= '2019-04-30'::DATE;
+ count
+-------
+    27
+(1 row)
+
+
+2. What is the income of each doctor in the month of March and April respectively?:
+
+postgres=# SELECT patients.doctor_id, SUM(bills.amount)
+postgres-# FROM patients
+postgres-# JOIN bills ON patients.bill_id = bills.bill_id
+postgres-# WHERE bills.bill_date >= '2019-03-01'::DATE AND bills.bill_date <= '2019-04-30'::DATE
+postgres-# AND bills.paid = 't'
+postgres-# GROUP BY doctor_id;
+ doctor_id |     sum
+-----------+--------------
+ d1        | 1.054175e+06
+ d2        |       996182
+ d3        |       619847
+ d4        |        78625
+(4 rows)
+
+
+3. What is the total amount of bills that are pending for payment :
+
+postgres=# SELECT SUM(bills.amount)
+postgres-# FROM patients
+postgres-# JOIN bills ON patients.bill_id = bills.bill_id
+postgres-# WHERE bills.paid = 'f';
+  sum
+--------
+ 337650
+(1 row)
+
+
+4. What is the revenue generated by each department of the hospital in the month of March and April respectively?:
+
+postgres=# SELECT doctor.department, SUM(bills.amount)
+postgres-# FROM patients
+postgres-# JOIN bills ON patients.bill_id = bills.bill_id
+postgres-# JOIN doctor ON patients.doctor_id = doctor.doctor_id
+postgres-# WHERE bills.bill_date >= '2019-03-01'::DATE AND bills.bill_date <= '2019-04-30'::DATE
+postgres-# AND bills.paid = 't'
+postgres-# GROUP BY doctor.department;
+ department |     sum
+------------+--------------
+ Endo       |       619847
+ Heart      | 1.054175e+06
+ Ortho      |       996182
+ Pneumonia  |        78625
+(4 rows)
+
