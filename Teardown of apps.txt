@@ -1,0 +1,57 @@
+Teardowns:
+
+1. Kite by Zerodha:
+    a. 3 features do you like about the product and why:
+        1. interactive Dashboard showing all of the data related to investments, Funds, IPO's etc all on front tab.
+        2. GTT - It can automatically trigger buy or sell depending on your target or stop loss which helps us to be less worried about manually putting orders for existing investments.
+        3. P&L dash in consol - Gives a very good view of whle year regarding P&L with help of coloring each day red or green depedning on profit or loss.
+    
+    b. 3 features you do-not like about the product and why:
+        1. 2 way login - we need to login first with password and then put another pass as well whcih makes the process of logging in slower. If user is using same IP everytime then I think 2nd pass can be skipped.
+        2. reports - report generation in consol takes quite sometime and do not show the data of same day. data is availble till yeasterday.
+        3. Chart popout - when clicked on chart of stock in watchlist it appears on same page over dashboard rather than popping out to another tab which we can do by expanding options related to perticular stock
+
+2.  Tradingview:
+    a. 3 features do you like about the product and why:
+        1. Charts UI/UX: seemless chart designs makes it very easy and smooth experience to interact by drawing lines or navigating to different timelines.
+        2. Shortcuts: Alot of direct keyboard shorts makes it very easy to navigate between different options and draw on the chart.
+        3. Indicators: huge list of indicators with an option to make your own indicator and you can also choose customer indicators made by other users.
+
+    b. 3 features you do-not like about the product and why:
+        1. Home page on android app - homepage on android app is deirectly a list of major nifty 50 companies. to access any other company, we need to first add it to the list and then we can go its chart. I believe it would have better if there would have been an option to navigate to chart directly.
+        2. Searchbar on webapp: assumes NYSE market if you do not choose an options from the suggestion. could have remembered user preference and assume the market as tickers can be similar for different companies in different markets.
+        3. Broker: Not compatible to link with major brokers in INdia yet. could have been better if we could link it to our trading accounts directly and trade directly form tradingview.
+    
+3. Gpay:
+    a. 3 features do you like about the product and why:
+        1. great UI look with minimal deisgn and option of paying peers directly on homepage.
+        2. Dark mode: Makes it look very good 
+        3. Chat mode: we can chat with the person we are about to send money.
+
+    b. 3 features you do-not like about the product and why:
+        1. Complicated process for paying bills, business payments.
+        2. QR code scanner: veyr small icon makes it veyr difficult to see on the homepage.
+        3. 
+
+4. Youtube:
+    a. 3 features do you like about the product and why:
+        1. Recommendation: Youtube's algorithm is very good at Recommendations of related videos based on your viewing preferences.
+        2. Uploading: uploading videos is very easy and direct on mobile app. you can also schedule the release on webapp.
+        3. Auto resolution selector: Very useful in fluctuating data speed.
+
+    b. 3 features you do-not like about the product and why:
+        1. heavy data consuming homepage - could have inculuded data saver mode.
+        2. Recommendations: No way to adjust Recommendation engine's settings for getting more relevant Recommendations.
+        3. Shorts: No way to disable youtube shorts in mobile app.
+
+5. microsoft Teams:
+    a. 3 features do you like about the product and why:
+        1. Ability to collab and work on same file in the call group makes it very easy for teams to collab.
+        2. Captions: you can turn on live captions in calls which helps with different accents.
+        3. Tasks: you can assign tasks by making a group whih makes it easier to track progess in a single window.
+    
+    b. 3 features you do-not like about the product and why::
+        1. complex process for automating tasks.
+        2. Complex process for using bots for meetings.
+        3. No way to configure reminder system for tasks in teams.
+            
