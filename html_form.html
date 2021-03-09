@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<body>  
+    <form action="/my-handling-form-page" name="survey-form" method="post">
+            <p>
+                Name*:
+                <input type="text" id="name" placeholder="Name" name="user_name" required>
+            </p>
+            <p>
+                Email*:
+                <input type="email" id="email" placeholder="Email-id" name="email" required>
+            </p>
+            <p>
+                Gender*:
+                <input type="radio" name="gender" required> Male
+                <input type="radio" name="gender">Female
+            </p>
+
+            <p>
+                Please select the features you loved abput out product below:<br/>
+                <input type="checkbox" name="features">website is fast <br/>
+                <input type="checkbox" name="features">website looks awesome<br/>
+                <input type="checkbox" name="features">website us user friendly<br/>
+            </p>
+            
+
+            <p>
+                Please select the rating for this website below:
+                <select name="rating">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+
+                </select>
+            </p>
+
+
+            <p>
+                <textarea name="message" placeholder="any message you have for us?"></textarea>
+            </p>
+
+            <p>
+                <input type="submit">
+            </p>
+        
+
+    </form>
+</body>
