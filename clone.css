@@ -1,0 +1,252 @@
+body * {
+    /* border: 1px solid red !important; */
+    /* background: rgb(181, 230, 60); */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    
+  }
+
+*{
+    margin:0px;
+    padding:0px;
+
+}
+
+.logos{
+    width: 30px;
+    height: 30px;
+}
+
+p1{
+    color: white;
+    height:30px;
+}
+
+img{
+    float: right;
+}
+
+.navbar{
+    display: flex;
+    height: 50px;
+    background-color: rgb(163, 206, 55);
+    flex-direction: row;
+    align-content: center;
+    flex-wrap: wrap;
+    /*justify-content: space-around; */
+    
+    
+}
+
+.navbar-itmes{
+    color:white;
+    align-content: center;
+    line-height: 30px;
+}
+
+.section-1{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    background-image: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 2) ),url("https://image.freepik.com/free-photo/asia-businessmen-businesswomen-meeting-brainstorming-ideas-conducting-business-presentation-project-colleagues-working-together-plan-success-strategy-enjoy-teamwork-small-modern-night-office_7861-2387.jpg");
+    /* background-blend-mode: lighten; */
+    height: 700px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* opacity: 1.7; */
+    /* justify-content: space-around; */
+
+    
+    
+}
+
+.section-1-content{
+   
+    height: 50px;
+    width: 50px;
+    color: white;
+    margin-top: 50px;
+    flex-wrap: wrap;
+
+    /* align-content: center; */
+    /* justify-content: center; */
+    /* text-justify: center; */
+    
+}
+
+.section-1-content:hover{
+    color: rgb(163, 206, 55);
+    text-decoration: underline;
+}
+
+.section-1-content-1{
+    color: rgb(163, 206, 55);
+    font-weight: 100;
+    font-size: larger;
+    
+    
+    height: 40px;
+    /* flex-direction: column;     */
+}
+
+.button1{
+    background-color:  rgb(163, 206, 55);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 20px;
+    border-color: white;
+    
+}
+
+.section-2{
+    background:rgb(163, 206, 55);
+    height:120px;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+
+}
+
+.section-3{
+    display: flex;
+    flex-direction: column;
+    margin-top: 90px;
+    height: 300px;
+    background:white;
+    line-height: 90px;
+    justify-self:center ;
+    font-size: 30px;
+}
+
+.section-4{
+    display: flex;
+    flex-direction: row;
+    background:white;
+    justify-content: space-around;
+    height: 800px;
+    width: fit-content;
+    font-size: 18px;
+}
+
+.section-41{
+    display: flex;
+    line-height: 1.5em;
+    font-size: small;
+}
+
+.section-5{
+    
+    background-image: url(https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);
+    height: 700px;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;   
+    color: white;
+}
+
+/* #overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    background-color:rgba(0,0,0,0.5); */
+
+.darken-overlay div{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.section-51{
+    display: flex;
+    flex-direction: column;
+    height:700px;
+}
+
+.section-52{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.section-6{
+    display: flex;
+    flex-direction: row;
+}
+
+.section-61{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.section-7{
+    height: 600px;
+    display:flex;
+    flex-direction: column;
+    line-height: 50px;
+    background:rgb(231, 231, 231);
+}
+
+.section-71{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.section-8{
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    line-height: 50px;
+    align-content: center;
+}
+
+.section-81{
+    display: flex;
+    flex-direction: column;
+}
+
+.section-82{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 400px;
+    background: rgb(163, 206, 55);
+}
+
+.section-9{
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+}
+
+.section-10{
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+    background: rgb(48, 47, 47);
+    color: white;
+    line-height: 40px;
+}
+
+.section-101{
+    display: flex;
+    flex-direction: column;
+}
+
+.section-11{
+    display: flex;
+    background:rgb(71, 70, 70);
+    color: white;
+    padding-left: 35%;
+}
